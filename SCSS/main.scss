@@ -7,9 +7,11 @@ $font-mid: 30px;
 $font-sm: 20px;
 
 .nav {
-  background-color: $color-primary;
-
-  ul li {
+  background-color: transparentize($color-primary, 10)
+    // lighten($color-primary, 30%);
+    //darken
+    //lighten
+    ul li {
     list-style: none;
   }
 
@@ -24,28 +26,80 @@ $font-sm: 20px;
   }
 }
 
-@mixin headingStyles($fontSize: 50px) {
-  color: $color-secondary;
-  color: $color-secondary;
+.heading {
+  color: $color-primary;
+  font-size: $font-lg;
+  background-color: $color-secondary;
   text-align: center;
 }
 
-@mixin transition($param...) {
-  transition: $param;
+@function fontSize($size) {
+  @return $size * 2;
 }
 
-.banner h1 {
-  @include headingStyles($font-lg);
-}
-
-.footer h3 {
-  @include headingStyles;
-  @include transition(color 0.5s, background-color 1s);
+h1 {
+  @extend .heading;
 
   &:hover {
-    color: $color-tertiary;
-    background-color: $color-primary;
+    background-color: red;
   }
 }
 
+.footer h3 {
+  @extend h1;
+}
+
+.banner p {
+  font-size: fontSize($font-sm);
+}
+
+/*
+
+
+
+.banner h1 {
+  @extend .heading;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.footer h3 {
+  @extend .heading;
+}
+
+will not work  need to get rid of class banner
+
+
+
+
+
+*/
+
 // nesting in sass
+
+/*
+
+Variable
+Variable is a container, which store reusable data values
+
+
+Nesting in SASS
+Allow us to avoid writing many lines of css
+easy to use
+shortcut of creating CSS rules
+
+
+Mixin
+Mixin is a block of code which groups bunch of reusable CSS styles.
+
+
+Extend
+Extends allows one selector to inherit styles of another selector you can write cleaner and concise code
+
+
+
+functions
+function allows us ti to run code over  and over again when we call it
+*/

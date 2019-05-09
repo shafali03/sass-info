@@ -1,5 +1,5 @@
 .nav {
-  background-color: orange; }
+  background-color: #ffdb99; }
   .nav ul li {
     list-style: none; }
   .nav a {
@@ -9,16 +9,62 @@
     .nav a:hover {
       color: green; }
 
-.banner h1 {
-  color: gray;
-  color: gray;
+.heading, h1, .footer h3 {
+  color: orange;
+  font-size: 40px;
+  background-color: gray;
   text-align: center; }
 
+h1:hover, .footer h3:hover {
+  background-color: red; }
+
+.banner p {
+  font-size: 40px; }
+
+/*
+
+
+
+.banner h1 {
+  @extend .heading;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
 .footer h3 {
-  color: gray;
-  color: gray;
-  text-align: center;
-  transition: color 0.5s, background-color 1s; }
-  .footer h3:hover {
-    color: green;
-    background-color: orange; }
+  @extend .heading;
+}
+
+will not work  need to get rid of class banner
+
+
+
+
+
+*/
+/*
+
+Variable
+Variable is a container, which store reusable data values
+
+
+Nesting in SASS
+Allow us to avoid writing many lines of css
+easy to use
+shortcut of creating CSS rules
+
+
+Mixin
+Mixin is a block of code which groups bunch of reusable CSS styles.
+
+
+Extend
+Extends allows one selector to inherit styles of another selector you can write cleaner and concise code
+
+
+
+functions
+function allows us ti to run code over  and over again when we call it
+*/
